@@ -1,46 +1,113 @@
 <head>
-    <title>Top 10 Webapp (add additional title here)</title>
+  <title>Top 10 Webapp (add additional title here)</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">TOP 10 SKU</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Settings</a></li>
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Help</a></li>
-          </ul>
-          <form class="navbar-form navbar-right">
-            <input type="text" class="form-control" placeholder="Search...">
-          </form>
-        </div>
-      </div>
-    </nav>
-
+  <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
-            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
-            <li><a href="#">Other menu point</a></li>
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">TOP 10 SKU</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">Settings</a></li>
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">Help</a></li>
+        </ul>
+        <form class="navbar-form navbar-right">
+          <input type="text" class="form-control" placeholder="Search...">
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 col-md-2 sidebar">
+        <ul class="nav nav-sidebar">
+          <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+          <li><a href="#">Other menu point</a></li>
+        </ul>
+        <div class="panel panel-default">
+          <!-- Default panel contents -->
+          <div class="panel-heading">Filters</div>
+          <!-- List group -->
+          <ul class="list-group">
+            <li class="list-group-item">
+              <h4>Brand Type</h4>
+              <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default">all</button>
+                <button type="button" class="btn btn-default">branded</button>
+                <button type="button" class="btn btn-default">private</button>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <h4>Country</h4>
+              <button type="button" class="btn btn-default">AU</button>
+              <button type="button" class="btn btn-default">HK</button>
+              <button type="button" class="btn btn-default">ID</button>
+            </li>
+            <li class="list-group-item">
+              <h4>Sales type</h4>
+              <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default">Net Sale</button>
+                <button type="button" class="btn btn-default">Gross Sale</button>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <h4>Date Range</h4>
+              <button type="button" class="btn btn-default">1</button>
+              <button type="button" class="btn btn-default">2</button>
+              <button type="button" class="btn btn-default">4</button>
+              weeks
+            </li>
           </ul>
-          <p>Basic configuration/switches go here</p>
+
         </div>
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">Dashboard</h1>
-          {{>charts}}
-          <h2 class="sub-header">Our data tables</h2>
+
+      </div>
+      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <h1 class="page-header">Dashboard</h1>
+        {{>charts}}
+        <h2 class="sub-header">Our data tables</h2>
+        {{>data_table}}
+      </div>
+    </div>
+  </div>
+</body>
+
+<template name="charts">
+  <div class="row placeholders">
+    <div class="col-xs-6 col-sm-3 placeholder">
+      <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
+        <h4>Label</h4>
+        <span class="text-muted">Something else</span>
+      </div>
+      <div class="col-xs-6 col-sm-3 placeholder">
+        <img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
+          <h4>Label</h4>
+          <span class="text-muted">Something else</span>
+        </div>
+        <div class="col-xs-6 col-sm-3 placeholder">
+          <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
+            <h4>Label</h4>
+            <span class="text-muted">Something else</span>
+          </div>
+          <div class="col-xs-6 col-sm-3 placeholder">
+            <img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Label</h4>
+              <span class="text-muted">Something else</span>
+            </div>
+          </div>
+        </template>
+        <template name="data_table">
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>
@@ -168,33 +235,4 @@
               </tbody>
             </table>
           </div>
-        </div>
-      </div>
-    </div>
-
-</body>
-
-<template name="charts">
-          <div class="row placeholders">
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-          </div>
-</template>
+        </template>
