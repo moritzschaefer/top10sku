@@ -1,12 +1,11 @@
 if Meteor.isClient
-  Session.setDefault 'counter', 0
-  Template.hello.helpers
-    counter: () ->
-      Session.get 'counter'
-
-  Template.hello.events
-    'click button': () ->
-      Session.set 'counter', Session.get('counter')+1
+  Session.setDefault 'clicked', 'not set'
+  Template.filters.events
+    'click label.btn': ->
+      Session.set 'clicked', 'lala'
+  Template.body.helpers
+    clicked: ->
+      Session.get 'clicked'
 
 if Meteor.isServer
   Meteor.startup () ->
