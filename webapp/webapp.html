@@ -38,50 +38,64 @@
         <div class="panel panel-default">
           <!-- Default panel contents -->
           <div class="panel-heading">Filters</div>
-          <!-- List group -->
-          <ul class="list-group">
-            <li class="list-group-item">
-              <h4>Brand Type</h4>
-              <div class="btn-group" role="group">
-                <button type="button" class="btn btn-default">all</button>
-                <button type="button" class="btn btn-default">branded</button>
-                <button type="button" class="btn btn-default">private</button>
-              </div>
-            </li>
-            <li class="list-group-item">
-              <h4>Country</h4>
-              <button type="button" class="btn btn-default">AU</button>
-              <button type="button" class="btn btn-default">HK</button>
-              <button type="button" class="btn btn-default">ID</button>
-            </li>
-            <li class="list-group-item">
-              <h4>Sales type</h4>
-              <div class="btn-group" role="group">
-                <button type="button" class="btn btn-default">Net Sale</button>
-                <button type="button" class="btn btn-default">Gross Sale</button>
-              </div>
-            </li>
-            <li class="list-group-item">
-              <h4>Date Range</h4>
-              <button type="button" class="btn btn-default">1</button>
-              <button type="button" class="btn btn-default">2</button>
-              <button type="button" class="btn btn-default">4</button>
-              weeks
-            </li>
-          </ul>
+          {{>filters}}
 
         </div>
 
       </div>
       <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
         <h1 class="page-header">Dashboard</h1>
-        {{>charts}}
+        <!--{{>charts}}-->
         <h2 class="sub-header">Our data tables</h2>
         {{>data_table}}
       </div>
     </div>
   </div>
 </body>
+
+<template name="filters">
+  <!-- List group -->
+  <ul class="list-group">
+    <li class="list-group-item">
+      <h4>Brand Type</h4>
+      <div class="btn-group" data-toggle="buttons">
+        <label class="btn btn-primary active">
+          <input type="radio" name="brand-type" id="brand-type-all">all
+        </label>
+        <label class="btn btn-primary">
+          <input type="radio" name="brand-type" id="brand-type-branded">branded
+        </label>
+        <label class="btn btn-primary">
+          <input type="radio" name="brand-type" id="brand-type-private">private
+        </label>
+      </div>
+    </li>
+    <li class="list-group-item">
+      <h4>Country</h4>
+      <div data-toggle="buttons">
+        <label class="btn btn-primary active"><input type="radio" name="country" id="country-au">AU</label>
+        <label class="btn btn-primary"><input type="radio" name="country" id="country-hk">HK</label>
+        <label class="btn btn-primary"><input type="radio" name="country" id="country-id">ID</label>
+      </div>
+    </li>
+    <li class="list-group-item">
+      <h4>Sales type</h4>
+      <div data-toggle="buttons">
+        <label class="btn btn-primary active"><input type="radio" name="sales-type" id="net-sale">Net Sale</label>
+        <label class="btn btn-primary"><input type="radio" name="sales-type" id="gross-sale">Gross Sale</label>
+      </div>
+    </li>
+    <li class="list-group-item">
+      <h4>Date Range</h4>
+      <div data-toggle="buttons">
+        <label class="btn btn-primary active"><input type="radio" name="date-range" id="date-range-1">1</label>
+        <label class="btn btn-primary"><input type="radio" name="date-range" id="date-range-2">2</label>
+        <label class="btn btn-primary"><input type="radio" name="date-range" id="date-range-4">4</label>
+      </div>
+      weeks
+    </li>
+  </ul>
+</template>
 
 <template name="charts">
   <div class="row placeholders">
