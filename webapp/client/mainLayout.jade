@@ -1,0 +1,40 @@
+template(name="mainLayout")
+  nav.navbar.navbar-inverse.navbar-fixed-top
+    .container-fluid
+      .navbar-header
+        button.navbar-toggle.collapsed(type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar")
+          span.sr-only Toggle navigation
+          span.icon-bar
+        a.navbar-brand(href="#") TOP 10 SKU
+      #navbar.navbar-collapse.collapse
+        nav.navbar-nav.navbar-right
+          li
+            a(href="#") Dashboard
+          li
+            a(href="#") Settings
+          li
+            a(href="#") Profile
+          li
+            a(href="#") Help
+        form.navbar-form.navbar-right
+          input.form-control(type="text" placeholder="Search...")
+  .container-fluid
+    .row
+      .col-sm-3.col-md-2.sidebar
+        ul.nav.nav-sidebar
+          li.active
+            a(href="#")
+              |Overview
+              span.sr-only (current)
+          li
+            a(href="#")
+              |Other menu point
+        .panel.panel-default
+          .panel-heading Filters
+          //Default panel contents
+          +filters
+      .col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
+        h1.page-header Dashboard
+        // +charts
+        h2.sub-header Our data tables
+        +dataTable

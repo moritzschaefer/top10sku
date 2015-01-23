@@ -11,3 +11,5 @@ underscore
 less
 nemo64:bootstrap
 coffeescript
+iron:router
+mquandalle:jade
