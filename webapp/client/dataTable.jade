@@ -3,16 +3,16 @@ template(name="dataTable")
     table.table.table-striped
       thead
         tr
-          th #
-          th Header
-          th Header
-          th Header
-          th Header
+          th Top
+          th Category
+          th Valid Purchases
+          th Revenues
+          th Revenues in % of Total
       tbody
         each data
           tr
-            td #{data1}
-            td #{data2}
-            td #{data3}
-            td #{data4}
-            td #{data5}
+            td #{top}
+            td #{categroy}
+            td #{valid_purchasen}
+            td #{revenues}
+            td #{100*revenues/total}
