@@ -12,7 +12,7 @@ template(name="dataTable")
         each data
           tr
             td #{top}
-            td #{category}
-            td #{valid_purchases}
+            td #{name}
+            td #{validPurchases}
             td #{revenues}
-            td #{100*revenues/total}
+            td {{revenuesPerTotal revenues}}
