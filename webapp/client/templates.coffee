@@ -12,7 +12,3 @@ Template.filters.events
   #   Session.set 'filterSalesType', event.target.children[0].attributes['value']['value']
   # 'click label.btn:has(input[name="date-range"])': (event, template)->
   #   Session.set 'filterDateRange', event.target.children[0].attributes['value']['value']
-Template.dataTable.helpers
-  data: ->
-    # use Session-filter values to obtain the necessary data from the backend
-    [{data1: 'data1', data2: 'data2', data3: 'data3', data4: 'data4', data5: 'data5'}, {data1: 'data1', data2: 'data2', data3: 'data3', data4: 'data4', data5: 'data5'}, {data1: 'data1', data2: 'data2', data3: 'data3', data4: 'data4', data5: 'data5'}]
