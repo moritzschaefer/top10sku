@@ -11,14 +11,19 @@ Router.route '/categories', ->
   this.redirect 'overview'
 
 Router.route '/overview', ->
-  this.render 'overview',
-    data: {collection: Categories}
+  this.render 'overview'
 
 Router.route '/subCategories/:_id',
   action: ->
-    this.render '/subCategories',
+    this.render 'subCategories',
       data:
-        collection: SubCategories
         parent_id: this.params._id
   name: 'subCategories.show'
+
+Router.route '/skus/:_id',
+  action: ->
+    this.render 'skus',
+      data:
+        parent_id: this.params._id
+  name: 'skus.show'
 

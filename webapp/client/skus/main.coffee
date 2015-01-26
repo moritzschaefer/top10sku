@@ -1,10 +1,10 @@
-Template.subCategories.helpers
+Template.skus.helpers
   filterDateRange: ->
     Session.get 'filter-date-range'
 
   data: ->
     # use Session-filter values to obtain the necessary data from the backend
-    tmp = SubCategories.find().fetch() # TODO filter for parent=parent_id here
+    tmp = SKUs.find().fetch() # TODO filter for parent=parent_id here
     # add top argument for enumeration
     i = 1
     _.map tmp, (v) ->
@@ -14,7 +14,7 @@ Template.subCategories.helpers
 
   revenuesPerTotal: (revenues) ->
     # todo: this is slow. cache the totalrevenues somehow..
-    totalRevenues = _.reduce( SubCategories.find().fetch(),
+    totalRevenues = _.reduce( SKUs.find().fetch(),
       (memo, cat) ->
         parseFloat(memo) + parseFloat(cat.revenues)
       , 0)
