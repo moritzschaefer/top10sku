@@ -13,8 +13,7 @@ template(name="skus")
       tbody
         each data
           tr
-            a(href="{{ pathFor route='skus.show' }}")
-              td #{top}
+            td #{top}
             td #{name}
             td #{validPurchases}
             td #{revenues}

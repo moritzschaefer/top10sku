@@ -11,9 +11,9 @@ template(name="dataTable")
       tbody
         each data
           tr
-            a(href="{{ pathFor route='subCategories.show' }}")
-              td #{top}
-            td #{name}
+            td #{top}
+            td
+              a(href="{{ pathFor route='subCategories.show' }}") #{name}
             td #{validPurchases}
             td #{revenues}
             td {{revenuesPerTotal revenues}}

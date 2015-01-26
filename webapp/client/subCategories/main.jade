@@ -13,9 +13,9 @@ template(name="subCategories")
       tbody
         each data
           tr
-            a(href="{{ pathFor route='skus.show' }}")
-              td #{top}
-            td #{name}
+            td #{top}
+            td
+              a(href="{{ pathFor route='skus.show' }}") #{name}
             td #{validPurchases}
             td #{revenues}
             td {{revenuesPerTotal revenues}}
