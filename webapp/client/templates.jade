@@ -15,15 +15,10 @@ template(name='filters')
     li.list-group-item
       h4 Country
       div(data-toggle='buttons')
-        label.btn.btn-primary.active
-          input(type='radio', name='country', value='au')
-          | AU
-        label.btn.btn-primary
-          input(type='radio', name='country', value='hk')
-          | HK
-        label.btn.btn-primary
-          input(type='radio', name='country', value='id')
-          | ID
+        each countries
+          label.btn.btn-primary
+            input(type='radio', name='country', value=name)
+            | #{name}
     li.list-group-item
       h4 Sales type
       div(data-toggle='buttons')
