@@ -13,6 +13,11 @@ Router.route '/categories', ->
 Router.route '/overview', ->
   this.render 'overview'
 
+Router.route '/subCategories',
+  action: ->
+    this.render 'subCategories',
+  name: 'subCategories.showAll'
+
 Router.route '/subCategories/:_id',
   action: ->
     this.render 'subCategories',

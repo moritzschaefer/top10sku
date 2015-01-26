@@ -5,7 +5,7 @@ template(name="mainLayout")
         button.navbar-toggle.collapsed(type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar")
           span.sr-only Toggle navigation
           span.icon-bar
-        a.navbar-brand(href="#") TOP 10 SKU
+        a.navbar-brand(href="/") TOP 10 SKU
       #navbar.navbar-collapse.collapse
         ul.nav.navbar-nav.navbar-right
           li
@@ -24,11 +24,11 @@ template(name="mainLayout")
         ul.nav.nav-sidebar
           li.active
             a(href="{{pathFor 'overview'}}")
-              |Overview
+              |Categories/Overview
               span.sr-only (current)
           li
-            a(href="#")
-              |Other menu point
+            a(href="{{pathFor 'subCategories.showAll'}}")
+              |Sub-Categories
         .panel.panel-default
           .panel-heading Filters
           //Default panel contents
