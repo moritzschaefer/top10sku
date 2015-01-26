@@ -11,14 +11,3 @@ Template.skus.helpers
       v.top = i
       i += 1
       v
-
-  revenuesPerTotal: (revenues) ->
-    # todo: this is slow. cache the totalrevenues somehow..
-    totalRevenues = _.reduce( SKUs.find().fetch(),
-      (memo, cat) ->
-        parseFloat(memo) + parseFloat(cat.revenues)
-      , 0)
-    100 * revenues / totalRevenues
-
-
-

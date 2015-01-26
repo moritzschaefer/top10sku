@@ -6,15 +6,35 @@ template(name="skus")
       thead
         tr
           th Top
-          th SKU
-          th Valid Purchases
+          th Image & URL
+          th SKU Metadata
+          th Statistics
+          th Average Margin
           th Revenues
-          th Revenues in % of Total
       tbody
         each data
           tr
             td #{top}
-            td #{name}
-            td #{validPurchases}
-            td #{revenues}
-            td {{revenuesPerTotal revenues}}
+            td
+              a(href=url)
+                img(src=imgSrc alt=product)
+            td
+              each metadata
+                p
+                  strong #{title}
+                  span
+                    | #{value}
+            td
+              each statistics
+                p
+                  strong #{title}
+                  span
+                    | #{value}
+            td
+              each averageMargin
+                p
+                  strong #{title}
+                  span
+                    | #{value}
+            td
+              | #{revenues} SGD
