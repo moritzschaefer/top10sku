@@ -11,6 +11,7 @@ Template.skus.helpers
     # add top argument for enumeration
     i = 1
     _.map tmp, (v) ->
+      v.imgSrc="http://pi3.lmcdn.ru/img233x336/"+v.picture_url # TODO move base URL to config
       v.top = i
       i += 1
       v
