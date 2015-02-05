@@ -15,7 +15,7 @@ template(name="subCategories")
           tr
             td #{top}
             td
-              a(href="{{ pathFor route='skus.show' }}") #{name}
+              a(href="{{ pathFor route='skus.show' _id=this._id.toHexString }}") #{name}
             td #{validPurchases}
             td #{revenues}
             td {{revenuesPerTotal revenues}}

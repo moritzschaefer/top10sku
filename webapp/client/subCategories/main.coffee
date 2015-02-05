@@ -12,11 +12,11 @@ Template.subCategories.helpers
     if this.categoryId
       tmp = Categories.findOne
         _id: new Meteor.Collection.ObjectID(this.categoryId)
-      .sub_categories
+      .subCategories
     else
       tmp = []
       Categories.find().fetch().forEach (doc, index, cursor)->
-        tmp.extend(doc.sub_categories)
+        tmp.extend(doc.subCategories)
 
     # add top argument for enumeration
     i = 1
