@@ -3,8 +3,21 @@ Template.subCategories.helpers
     Session.get 'filter-date-range'
 
   data: ->
+    Array.prototype.extend = (other_array) ->
+      # you should include a test to check whether other_array really is an array
+      other_array.forEach (v) ->
+        this.push(v)
+      , this
     # use Session-filter values to obtain the necessary data from the backend
-    tmp = SubCategories.find().fetch() # TODO filter for parent=parent_id here
+    if this.categoryId
+      tmp = Categories.findOne
+        _id: new Meteor.Collection.ObjectID(this.categoryId)
+      .sub_categories
+    else
+      tmp = []
+      Categories.find().fetch().forEach (doc, index, cursor)->
+        tmp.extend(doc.sub_categories)
+
     # add top argument for enumeration
     i = 1
     _.map tmp, (v) ->
@@ -19,6 +32,3 @@ Template.subCategories.helpers
         parseFloat(memo) + parseFloat(cat.revenues)
       , 0)
     100 * revenues / totalRevenues
-
-
-

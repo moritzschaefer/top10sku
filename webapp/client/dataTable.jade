@@ -13,7 +13,7 @@ template(name="dataTable")
           tr
             td #{top}
             td
-              a(href="{{ pathFor route='subCategories.show' }}") #{name}
+              a(href="{{ pathFor route='subCategories.show' _id=this._id.toHexString }}") #{name}
             td #{validPurchases}
             td #{revenues}
             td {{revenuesPerTotal revenues}}

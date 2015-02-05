@@ -22,13 +22,13 @@ Router.route '/subCategories/:_id',
   action: ->
     this.render 'subCategories',
       data:
-        parent_id: this.params._id
+        categoryId: this.params._id
   name: 'subCategories.show'
 
 Router.route '/skus/:_id',
   action: ->
     this.render 'skus',
       data:
-        parent_id: this.params._id
+        subCategoryId: this.params._id
   name: 'skus.show'
 
