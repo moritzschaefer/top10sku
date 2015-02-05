@@ -4,9 +4,9 @@ Template.skus.helpers
 
   data: ->
     # use Session-filter values to obtain the necessary data from the backend
-    tmp = SKUs.find(
+    tmp = SKUs.findr
       subCategoryId: new Meteor.Collection.ObjectID(this.subCategoryId)
-    ).fetch()
+    .fetch()
 
     # add top argument for enumeration
     i = 1

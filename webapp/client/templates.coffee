@@ -5,6 +5,13 @@ Template.filters.helpers
   countries: ->
     # TODO: use mongo configuration
     [{name: 'AU'}, {name: 'ID'}]
+  brandTypes: ->
+    [{name: 'all'}, {name: 'branded'}, {name: 'private'}]
+  salesTypes: ->
+    [{name: 'Net Sale', value: 'net'}, {name: 'Gross Sale', value: 'gross'}]
+  dateRanges: ->
+    [{name: '1'}, {name: '2'}, {name: '4'}]
+
 
 
 Template.filters.events

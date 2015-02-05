@@ -3,15 +3,10 @@ template(name='filters')
     li.list-group-item
       h4 Brand Type
       .btn-group(data-toggle='buttons')
-        label.btn.btn-primary.active
-          input(type='radio', name='brand-type', value='all')
-          | all
-        label.btn.btn-primary
-          input(type='radio', name='brand-type', value='branded')
-          | branded
-        label.btn.btn-primary
-          input(type='radio', name='brand-type', value='private')
-          | private
+        each brandTypes
+          label.btn.btn-primary
+            input(type='radio', name='brand-type', value=name)
+            | #{name}
     li.list-group-item
       h4 Country
       div(data-toggle='buttons')
@@ -22,24 +17,17 @@ template(name='filters')
     li.list-group-item
       h4 Sales type
       div(data-toggle='buttons')
-        label.btn.btn-primary.active
-          input(type='radio', name='sales-type', value='net')
-          | Net Sale
-        label.btn.btn-primary
-          input(type='radio', name='sales-type', value='gross')
-          | Gross Sale
+        each salesTypes
+          label.btn.btn-primary
+            input(type='radio', name='sales-type', value=value)
+            | #{name}
     li.list-group-item
       h4 Date Range
       div(data-toggle='buttons')
-        label.btn.btn-primary.active
-          input(type='radio', name='date-range', value='1')
-          | 1
-        label.btn.btn-primary
-          input(type='radio', name='date-range', value='2')
-          | 2
-        label.btn.btn-primary
-          input(type='radio', name='date-range', value='4')
-          | 4
+        each dateRanges
+          label.btn.btn-primary.active
+            input(type='radio', name='date-range', value=name)
+            | #{name}
       |       weeks
 template(name='charts')
   .row.placeholders
