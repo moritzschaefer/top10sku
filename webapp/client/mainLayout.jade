@@ -22,11 +22,11 @@ template(name="mainLayout")
     .row
       .col-sm-3.col-md-2.sidebar
         ul.nav.nav-sidebar
-          li.active
+          li(class="{{isActiveRoute regex='overview'}}")
             a(href="{{pathFor 'overview'}}")
               |Categories/Overview
               span.sr-only (current)
-          li
+          li(class="{{isActiveRoute regex='subCategories'}}")
             a(href="{{pathFor 'subCategories.showAll'}}")
               |Sub-Categories
         .panel.panel-default

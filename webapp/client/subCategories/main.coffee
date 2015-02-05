@@ -27,7 +27,7 @@ Template.subCategories.helpers
 
   revenuesPerTotal: (revenues) ->
     # todo: this is slow. cache the totalrevenues somehow..
-    totalRevenues = _.reduce( SubCategories.find().fetch(),
+    totalRevenues = _.reduce( Categories.find().fetch(),
       (memo, cat) ->
         parseFloat(memo) + parseFloat(cat.revenues)
       , 0)

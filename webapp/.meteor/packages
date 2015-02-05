@@ -13,3 +13,4 @@ nemo64:bootstrap
 coffeescript
 iron:router
 mquandalle:jade
+zimme:iron-router-active
