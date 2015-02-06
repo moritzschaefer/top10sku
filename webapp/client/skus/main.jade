@@ -10,21 +10,21 @@ template(name="skus")
           th SKU Metadata
           th Statistics
           th Average Margin
-          th Revenues
+          th Revenues (Before rejection)
       tbody
         each data
           tr
             td #{top}
             td
-              a(href=url)
+              a(href=url target='_blank')
                 img(src=imgSrc alt=product)
-            td
+            td.list-cell
               each metadata
                 p
                   strong #{title}
                   span
                     | #{value}
-            td
+            td.list-cell
               each statistics
                 p
                   strong #{title}
@@ -37,4 +37,4 @@ template(name="skus")
                   span
                     | #{value}
             td
-              | #{revenues} SGD
+              | #{grs_revenue_bef_rejection} SGD
