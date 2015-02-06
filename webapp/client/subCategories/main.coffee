@@ -9,14 +9,14 @@ Template.subCategories.helpers
         this.push(v)
       , this
     # use Session-filter values to obtain the necessary data from the backend
-    if this.categoryId
+    if this.category_id
       tmp = Categories.findOne
-        _id: new Meteor.Collection.ObjectID(this.categoryId)
-      .subCategories
+        _id: new Meteor.Collection.ObjectID(this.category_id)
+      .sub_categories
     else
       tmp = []
-      Categories.find().fetch().forEach (doc, index, cursor)->
-        tmp.extend(doc.subCategories)
+      Categories.find().fetch().forEach (doc, index, cursor) ->
+        tmp.extend(doc.sub_categories)
 
     # add top argument for enumeration
     i = 1
