@@ -6,6 +6,7 @@ Template.skus.helpers
     # use Session-filter values to obtain the necessary data from the backend
     tmp = SKUs.find
       sub_category_id: new Meteor.Collection.ObjectID(this.sub_category_id)
+      #country: {$in: countries}
     ,
       limit: 10
     .fetch()
