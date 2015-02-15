@@ -4,14 +4,17 @@ Session.setDefault 'clicked', 'not set'
 Template.filters.helpers
   countries: ->
     # TODO: use mongo configuration
-    [{name: 'AU'}, {name: 'ID'}]
+    [{name: 'AU'}, {name: 'ID'}, {name: 'ALL', default: true}]
   brandTypes: ->
-    [{name: 'all'}, {name: 'branded'}, {name: 'private'}]
+    [{name: 'all', default: true}, {name: 'branded'}, {name: 'private'}]
   salesTypes: ->
-    [{name: 'Net Sale', value: 'net'}, {name: 'Gross Sale', value: 'gross'}]
+    [{name: 'Net Sale', value: 'net', default: true}, {name: 'Gross Sale', value: 'gross'}]
   dateRanges: ->
-    [{name: '1'}, {name: '2'}, {name: '4'}]
+    [{name: '1'}, {name: '2'}, {name: '4', default: true}]
 
+Template.filters.rendered = ->
+  # TODO set session variables based on helpers.
+  #Session.set 'filter-date-range'
 
 
 Template.filters.events

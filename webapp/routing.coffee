@@ -27,6 +27,8 @@ Router.route '/subCategories/:_id',
 
 Router.route '/skus/:_id',
   action: ->
+    # use this.params.query.subCatId
+    Session.set 'filter-date-range', '4'
     this.render 'skus',
       data:
         sub_category_id: this.params._id
