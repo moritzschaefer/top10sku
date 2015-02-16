@@ -1,32 +1,25 @@
-# TODO autorun here for subscribing to SKUs
+# TODO move this to routing
+Tracker.autorun ->
+  Meteor.subscribe 'SKUs', Session.get('subCategoryId'), Session.get('filter-date-range')
 
 Template.skus.helpers
   filterDateRange: ->
     Session.get 'filter-date-range'
+  round: (value) ->
+    Math.round value
 
   data: ->
     # use Session-filter values to obtain the necessary data from the backend
 
-    console.log "rendering"
 
 
-    timeField = 'last'+Session.get('filter-date-range')
-    sortMap = {}
-    sortMap[timeField+'.grs_revenue'] = -1
-
-    tmp = SKUs.find
-      sub_category_id: new Meteor.Collection.ObjectID(this.sub_category_id)
-      #country: {$in: countries}
-    ,
-      sort: sortMap
-      limit: 10
-    .fetch()
-
+    tmp = SKUs.find().fetch()
+    console.log tmp
     timeField = 'last'+Session.get('filter-date-range')
 
     # add top argument for enumeration. prepare all arguments
     i = 1
-    r = _.map tmp, (v) ->
+    _.map tmp, (v) ->
       v.imgSrc="http://pi3.lmcdn.ru/img233x336/"+v.picture_url # TODO move base URL to config
       v.url="http://www.lamoda.ru/p/"+v.product_sku.toLowerCase() # tolowercase is not necessary
 
@@ -73,5 +66,3 @@ Template.skus.helpers
       v.top = i
       i += 1
       v
-    console.log "finished rendering"
-    r

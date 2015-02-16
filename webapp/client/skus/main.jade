@@ -1,40 +1,43 @@
 template(name="skus")
   h2.sub-header SKUs overview for the last #{filterDateRange} weeks
+  if data
 
-  .table-responsive
-    table.table.table-striped
-      thead
-        tr
-          th Top
-          th Image & URL
-          th SKU Metadata
-          th Statistics
-          th Average Margin
-          th Revenues (Before rejection)
-      tbody
-        each data
+    .table-responsive
+      table.table.table-striped
+        thead
           tr
-            td #{top}
-            td
-              a(href=url target='_blank')
-                img.product-img(src=imgSrc alt=product)
-            td.list-cell
-              each metadata
-                p
-                  strong #{title}
-                  span
-                    | #{value}
-            td.list-cell
-              each statistics
-                p
-                  strong #{title}
-                  span
-                    | #{value}
-            td
-              each averageMargin
-                p
-                  strong #{title}
-                  span
-                    | #{value}
-            td
-              | #{timeData.grs_revenue} SGD
+            th Top
+            th Image & URL
+            th SKU Metadata
+            th Statistics
+            th Average Margin
+            th Revenues (Before rejection)
+        tbody
+          each data
+            tr
+              td #{top}
+              td
+                a(href=url target='_blank')
+                  img.product-img(src=imgSrc alt=product)
+              td.list-cell
+                each metadata
+                  p
+                    strong #{title}
+                    span
+                      | #{value}
+              td.list-cell
+                each statistics
+                  p
+                    strong #{title}
+                    span
+                      | #{value}
+              td
+                each averageMargin
+                  p
+                    strong #{title}
+                    span
+                      | #{value}
+              td
+                | {{ round timeData.grs_revenue  }} SGD
+  else
+    p There is no data for the given filters
