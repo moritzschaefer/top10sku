@@ -1,5 +1,4 @@
 Meteor.publish 'SKUs', (subCategoryId, weeks) ->
-  console.log subCategoryId, weeks
 
   timeField = 'last'+weeks
   sortMap = {}
