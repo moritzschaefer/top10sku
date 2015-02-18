@@ -12,3 +12,6 @@ Meteor.publish 'SKUs', (subCategoryId, weeks) ->
   SKUs.find filterMap ,
     sort: sortMap
     limit: 10
+
+Meteor.publish 'categories', ->
+  Categories.find()
