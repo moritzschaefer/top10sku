@@ -1,5 +1,5 @@
 Template.overview.helpers
   filterDateRange: ->
-    Session.get 'filter-date-range'
-
+    if Session.get('filters')
+      Session.get('filters').dateRange.value
 

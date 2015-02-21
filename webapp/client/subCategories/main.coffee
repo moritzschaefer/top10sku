@@ -1,6 +1,6 @@
 Template.subCategories.helpers
   filterDateRange: ->
-    Session.get 'filter-date-range'
+    Session.get('filters').dateRange.value
 
   data: ->
     Array.prototype.extend = (other_array) ->

@@ -1,10 +1,11 @@
 # TODO move this to routing
 Tracker.autorun ->
-  Meteor.subscribe 'SKUs', Session.get('subCategoryId'), Session.get('filter-date-range')
+  if Session.get 'filters' and Session.get 'subCategoryId'
+    Meteor.subscribe 'SKUs', Session.get('subCategoryId'), Session.get('filters').dateRange.value
 
 Template.skus.helpers
   filterDateRange: ->
-    Session.get 'filter-date-range'
+    Session.get('filters').dateRange.value
   round: (value) ->
     Math.round value
 
@@ -14,8 +15,7 @@ Template.skus.helpers
 
 
     tmp = SKUs.find().fetch()
-    console.log tmp
-    timeField = 'last'+Session.get('filter-date-range')
+    timeField = 'last'+Session.get('filters').dateRange.value
 
     # add top argument for enumeration. prepare all arguments
     i = 1
